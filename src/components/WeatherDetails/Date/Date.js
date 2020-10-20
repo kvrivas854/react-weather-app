@@ -8,7 +8,7 @@ const date = (props) => {
     const today = new Date();
     return (
         <div className={classes.DateWrapper}>
-            {dateFormat(today, "dddd, mmmm dd")}
+            {dateformat(today, "dddd, mmmm dd")}
         </div>
     );
 }
