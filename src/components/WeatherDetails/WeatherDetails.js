@@ -5,7 +5,7 @@ import Temperature from './Temperature/Temperature';
 import Description from './Description/Description';
 import Date from './Date/Date';
 
-const WeatherDetails = (props) => {
+const weatherDetails = (props) => {
     return (
         <div className={classes.WeatherDetailsWrapper}>
             <div className={classes.WeatherIconWrapper}>
@@ -21,4 +21,4 @@ const WeatherDetails = (props) => {
     );
 }
 
-export default WeatherDetails;
+export default weatherDetails;
