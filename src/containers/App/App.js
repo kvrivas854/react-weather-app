@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import { MoonLoader } from 'react-spinners';
 import classes from './App.module.css';
-import assetMapping from "./assets/assetMapping.json"
-import Card from './elements/Card/Card';
-import Header from './components/Header/Header';
-import Footer from './components/Footer/Footer';
-import SearchBar from './components/SearchBar/SearchBar';
-import WeatherDetails from './components/WeatherDetails/WeatherDetails';
-import Preview from './components/Preview/Preview';
-import ErrorNotice from './components/ErrorNotice/ErrorNotice';
+import assetMapping from "../../assets/assetMapping.json"
+import Card from '../../elements/Card/Card';
+import Header from '../../components/Header/Header';
+import Footer from '../../components/Footer/Footer';
+import SearchBar from '../../components/SearchBar/SearchBar';
+import WeatherDetails from '../../components/WeatherDetails/WeatherDetails';
+import Preview from '../../components/Preview/Preview';
+import ErrorNotice from '../../components/ErrorNotice/ErrorNotice';
 
 class App extends Component () {
   state = {
@@ -75,6 +75,8 @@ class App extends Component () {
     let cardContent = <Preview />
     if (this.state.loading) {
       cardContent = <MoonLoader />;
+    } else if (this.state.error) {
+      cardContent = <ErrorNotice onClickHandler={this.tryAgainHandler} />;
     } else if (this.state.error) {
       cardContent = <WeatherDetails data={this.state.weatherDetails} />;
     }

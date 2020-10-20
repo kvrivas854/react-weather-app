@@ -1,9 +1,16 @@
 import React from 'react';
+import classes from './Logo.module.css';
 
-function Logo () {
-    return (
-        <div></div>
+const logo = (props) => {
+    let logoWithColorScheme = [
+        classes.Logo,
+        (props.colorScheme === 'dark') ? classes.Dark : classes.Light
+    ];
+    return(
+        <h1 className={logoWithColorScheme.join('')} onClick={props.clicked}>
+            My Weather
+        </h1>
     );
 }
 
-export default Logo;
+export default logo;
