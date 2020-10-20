@@ -10,11 +10,11 @@ import WeatherDetails from '../../components/WeatherDetails/WeatherDetails';
 import Preview from '../../components/Preview/Preview';
 import ErrorNotice from '../../components/ErrorNotice/ErrorNotice';
 
-class App extends Component () {
+class App extends Component {
   state = {
     searchBarInput: '',
     weatherDetails: {
-      temperature: '',
+      temperature: null,
       description: '',
     },
     loading: false,
@@ -38,7 +38,7 @@ class App extends Component () {
   setWeather = () => {
     const city = this.state.searchBarInput;
     const API_KEY = process.env.REACT_APP_WEATHER_API_KEY;
-    const API_URL = 'https://api.openweathermap.org/data/2.5/forecast';
+    const API_URL = 'https://api.openweathermap.org/data/2.5/weather';
     const URL = API_URL + `?q=${city}&appid=${API_KEY}&units=metric`;
 
     this.setState({
