@@ -3,7 +3,7 @@ import React from 'react';
 import classes from "./Preview.module.css";
 
 
-const preview = (props) => {
+function preview () {
     return (
         <img
         src={require('../../assets/images/Preview.svg')}
