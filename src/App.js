@@ -1,26 +1,32 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react';
+import { MoonLoader } from 'react-spinners';
+import classes from './App.module.css';
+import Card from '../../elements/Card/Card';
+import Header from '../../components/Header/Header';
+import Footer from '../../components/Footer/Footer';
+import SearchBar from '../../components/SearchBar/SearchBar';
+import WeatherDetails from '../../components/WeatherDetails/WeatherDetails';
+import Preview from '../../components/Preview/Preview';
+import ErrorNotices from '../../components/ErrorNotice/ErrorNotice';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component () {
+  render(){
+    return (
+      <div className={classes.AppWraper}>
+        <Header />
+        <main className={classes.AppMain}>
+          <SearchBar />
+          <Card>
+            <WeatherDetails/>
+            {/* <MoonLoader /> */}
+            {/* <Preview /> */}
+            {/* <ErrorNotice /> */}
+          </Card>
+        </main>
+        <Footer />
+      </div>
+    );
+  }
 }
 
 export default App;
